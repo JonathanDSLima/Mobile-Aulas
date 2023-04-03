@@ -1,0 +1,295 @@
+{
+  "pokemon": [
+    {
+      "name": "Ivysaur",
+      "description": "There is a bud on this Pokémon's back. To support its weight, Ivysaur's legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it's a sign that the bud will bloom into a large flower soon.  There is a bud on this Pokémon's back. To support its weight, Ivysaur's legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it's a sign that the bud will bloom into a large flower soon.",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "id": 2,
+      "image": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/002.png",
+      "favorite": false,
+      "stats": [
+        {
+          "name": "speed",
+          "value": 60
+        },
+        {
+          "name": "special-defense",
+          "value": 80
+        },
+        {
+          "name": "special-attack",
+          "value": 80
+        },
+        {
+          "name": "defense",
+          "value": 63
+        },
+        {
+          "name": "attack",
+          "value": 62
+        },
+        {
+          "name": "hp",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "name": "Venusaur",
+      "description": "There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.  There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "id": 3,
+      "image": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/003.png",
+      "favorite": false,
+      "stats": [
+        {
+          "name": "speed",
+          "value": 80
+        },
+        {
+          "name": "special-defense",
+          "value": 100
+        },
+        {
+          "name": "special-attack",
+          "value": 100
+        },
+        {
+          "name": "defense",
+          "value": 83
+        },
+        {
+          "name": "attack",
+          "value": 82
+        },
+        {
+          "name": "hp",
+          "value": 80
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "types": [
+        "fire"
+      ],
+      "stats": [
+        {
+          "value": 65,
+          "name": "speed"
+        },
+        {
+          "value": 50,
+          "name": "special-defense"
+        },
+        {
+          "value": 60,
+          "name": "special-attack"
+        },
+        {
+          "value": 43,
+          "name": "defense"
+        },
+        {
+          "value": 52,
+          "name": "attack"
+        },
+        {
+          "value": 39,
+          "name": "hp"
+        }
+      ],
+      "favorite": false,
+      "image": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/004.png",
+      "description": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.  The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
+      "name": "Charmander"
+    },
+    {
+      "id": 5,
+      "types": [
+        "fire"
+      ],
+      "stats": [
+        {
+          "value": 80,
+          "name": "speed"
+        },
+        {
+          "value": 65,
+          "name": "special-defense"
+        },
+        {
+          "value": 80,
+          "name": "special-attack"
+        },
+        {
+          "value": 58,
+          "name": "defense"
+        },
+        {
+          "value": 64,
+          "name": "attack"
+        },
+        {
+          "value": 58,
+          "name": "hp"
+        }
+      ],
+      "favorite": false,
+      "image": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/005.png",
+      "description": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.  Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.",
+      "name": "Charmeleon"
+    },
+    {
+      "name": "Charizard",
+      "description": "Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.  Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "id": 6,
+      "image": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/006.png",
+      "favorite": false,
+      "stats": [
+        {
+          "name": "speed",
+          "value": 100
+        },
+        {
+          "name": "special-defense",
+          "value": 85
+        },
+        {
+          "name": "special-attack",
+          "value": 109
+        },
+        {
+          "name": "defense",
+          "value": 78
+        },
+        {
+          "name": "attack",
+          "value": 84
+        },
+        {
+          "name": "hp",
+          "value": 78
+        }
+      ]
+    },
+    {
+      "name": "Squirtle",
+      "description": "Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.  Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.",
+      "types": [
+        "water"
+      ],
+      "id": 7,
+      "image": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/007.png",
+      "favorite": false,
+      "stats": [
+        {
+          "name": "speed",
+          "value": 43
+        },
+        {
+          "name": "special-defense",
+          "value": 64
+        },
+        {
+          "name": "special-attack",
+          "value": 50
+        },
+        {
+          "name": "defense",
+          "value": 65
+        },
+        {
+          "name": "attack",
+          "value": 48
+        },
+        {
+          "name": "hp",
+          "value": 44
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "types": [
+        "water"
+      ],
+      "stats": [
+        {
+          "value": 58,
+          "name": "speed"
+        },
+        {
+          "value": 80,
+          "name": "special-defense"
+        },
+        {
+          "value": 65,
+          "name": "special-attack"
+        },
+        {
+          "value": 80,
+          "name": "defense"
+        },
+        {
+          "value": 63,
+          "name": "attack"
+        },
+        {
+          "value": 59,
+          "name": "hp"
+        }
+      ],
+      "favorite": false,
+      "image": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/008.png",
+      "description": "Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon's toughness as a battler.  Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon's toughness as a battler.",
+      "name": "Wartortle"
+    },
+    {
+      "name": "Blastoise",
+      "description": "Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.  Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.",
+      "types": [
+        "water"
+      ],
+      "id": 9,
+      "image": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/009.png",
+      "favorite": false,
+      "stats": [
+        {
+          "name": "speed",
+          "value": 78
+        },
+        {
+          "name": "special-defense",
+          "value": 105
+        },
+        {
+          "name": "special-attack",
+          "value": 85
+        },
+        {
+          "name": "defense",
+          "value": 100
+        },
+        {
+          "name": "attack",
+          "value": 83
+        },
+        {
+          "name": "hp",
+          "value": 79
+        }
+      ]
+    }
+  ]
+}
