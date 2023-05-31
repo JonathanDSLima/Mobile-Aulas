@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from '../models/pokemon';
+import { Pokemon } from '../models/pokemon.interface';
+import { PokemonService } from '../services/pokemon.service';
 import { HomeService } from './home.service';
 
 @Component({
@@ -20,10 +21,16 @@ export class HomePage implements OnInit {
     types: ''
   }
 
-  constructor(private service: HomeService) { }
+  constructor(private service: HomeService, private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
-    this.getLista()
+    //this.getLista()
+    this.pokemonService.getAll().valueChanges().subscribe( res => {
+      console.log(res);
+      
+      
+    });
+     
   }
 
   /**Popula a tabela */

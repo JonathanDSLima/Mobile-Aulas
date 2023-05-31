@@ -4,10 +4,6 @@ export class Pokemon {
     image!: string;
     favorite!: boolean;
     types!: string;
-    stats: any[];
-    id: number;
-    constructor(stats: any[], id: number) {
-        this.stats = stats
-        this.id = id
-    }
+    color!: string;
+    id!: number;
 }

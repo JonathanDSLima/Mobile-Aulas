@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  url: "http://localhost:3000/pokemon"
+  url: "http://localhost:3000/pokemon",
+  firebaseConfig: {
+    apiKey: "AIzaSyA_JVy9dyhCxhsgpnqDXVGraErOzvSKPlQ",
+    authDomain: "mobile-b4326.firebaseapp.com",
+    databaseURL: "https://mobile-b4326-default-rtdb.firebaseio.com",
+    projectId: "mobile-b4326",
+    storageBucket: "mobile-b4326.appspot.com",
+    messagingSenderId: "434161009347",
+    appId: "1:434161009347:web:031bcf6634f78bd79c9876"
+  }
 };
 
 /*
