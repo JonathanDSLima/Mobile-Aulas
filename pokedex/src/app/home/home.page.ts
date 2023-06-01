@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pokemon } from '../models/pokemon.interface';
 import { PokemonService } from '../services/pokemon.service';
 import { HomeService } from './home.service';
@@ -11,7 +12,7 @@ import { HomeService } from './home.service';
 })
 export class HomePage implements OnInit {
 
-  pokemonList = new Array<Pokemon>();
+  pokemonList = new Array<any>();
   pokemon = {
     id: null,
     name: '',
@@ -21,59 +22,34 @@ export class HomePage implements OnInit {
     types: ''
   }
 
-  constructor(private service: HomeService, private pokemonService: PokemonService) { }
+  constructor(private pokemonService: PokemonService, private router: Router) { }
 
   ngOnInit(): void {
-    //this.getLista()
-    this.pokemonService.getAll().valueChanges().subscribe( res => {
-      console.log(res);
-      
-      
-    });
-     
+    this.getLista()
   }
 
   /**Popula a tabela */
   getLista() {
-    this.service.getPokemons().subscribe((res: Pokemon[]) => {
-      console.log(res);
-
-      this.pokemonList = res
-    })
-  }
-
-  /**Cria o pokemon na base mock teste, ou atualiza caso o id tenha sido passado nos inputs */
-  atualizarBase() {
-    this.pokemon.favorite = this.conversorBoolean(this.pokemon.favorite)
-    /**Verificando se os campos estão preenchidos */
-    if (this.pokemon.description && this.pokemon.name && this.pokemon.image && this.pokemon.types) {
-      /**Verificando id */
-      if (this.pokemon.id) {
-        this.service.updatePokemons(this.pokemon, this.pokemon.id).subscribe((res) => {
-          console.log(res);
-          this.getLista()
-        })
-      } else {
-        this.service.postPokemon(this.pokemon).subscribe((res) => {
-          console.log(res);
-          this.getLista()
-        })
-      }
-    }
-
+    this.pokemonService.getAll().valueChanges().subscribe( res => {
+      this.pokemonList = res;
+      
+    });
   }
 
   /**Deleta o pokemon na base pelo id */
-  deletarPokemon(id: number) {
-    this.service.deletePokemons(id).subscribe((res) => {
-      console.log(res);
-      this.getLista()
-    })
+  deletarPokemon(id: string | number) {
+    if(window.confirm("Certeza que deseja apagar esse pokemon?")){
+      this.pokemonService.deletePokemon(id)
+    }
   }
 
-  /**Convertendo o valor do input de string para bool */
-  conversorBoolean(bool: any) {
-    return bool == "true" ? true : false;
+  /**Navegar para o form*/
+  navigateForm(id?: string | number){
+    if(id){
+      this.router.navigate([`home/form/${id}`])
+    }else {
+      this.router.navigate(["home/form"])
+    }
   }
 
 }

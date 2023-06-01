@@ -19,10 +19,7 @@
       <ion-item>
         <ion-label>Avatar</ion-label>
         <ion-label>Nome</ion-label>
-        <ion-label>Descrição</ion-label>
         <ion-label>Tipo</ion-label>
-        <ion-label>Favorito</ion-label>
-        <!-- <ion-label>Ataque</ion-label> -->
         <ion-label>Ações</ion-label>
       </ion-item>
     </ion-list>
@@ -30,43 +27,19 @@
       <ion-item *ngFor="let data of pokemonList">
         <img src="{{data.image}}" alt="Avatar">
         <ion-label>{{ data.name}}</ion-label>
-        <ion-label>{{ data.description}}</ion-label>
         <ion-label>{{ data.types}}</ion-label>
-        <ion-label>{{ data.favorite == true ? "Sim" : "Não"}}</ion-label>
-        <!-- <ion-label>{{ (data.stats[4].value ? data.stats[4].value : "Sem dados") }}</ion-label> -->
         <ion-button (click)="deletarPokemon(data.id)">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+        <ion-button (click)="navigateForm(data.id)">
+          <ion-icon slot="icon-only" name="pencil"></ion-icon>
         </ion-button>
       </ion-item>
     </ion-list>
 
-    <ion-list>
-      <ion-item>
-        <ion-input class="input-class" [(ngModel)]="pokemon.id"  placeholder="Caso deseje editar informar o id do pokemon(Tem no mock)"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input class="input-class" [(ngModel)]="pokemon.image"  placeholder="Url da imagem(Usar do mock json)"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input class="input-class" [(ngModel)]="pokemon.name"  placeholder="Nome do pokemon"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input class="input-class" [(ngModel)]="pokemon.description"  placeholder="Breve descrição do pokemon"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input class="input-class" [(ngModel)]="pokemon.types"  placeholder="Tipos do pokemon(Separar por vírgula)"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input class="input-class" [(ngModel)]="pokemon.favorite"  placeholder="Pokemon favorito(Valores aceitos: true ou false)"></ion-input>
-      </ion-item>
-    </ion-list>
-
     <ion-list style="display: flex; justify-content: center; margin-bottom: 2vw;">
-      <ion-button size="small" (click)="atualizarBase()">
+      <ion-button size="small" (click)="navigateForm()">
         Adicionar
-      </ion-button>
-      <ion-button size="small"  (click)="atualizarBase()">
-        Editar(Id obrigatório)
       </ion-button>
     </ion-list>
 
