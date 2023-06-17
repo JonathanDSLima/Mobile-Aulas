@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { ViewWillEnter } from '@ionic/angular';
 import { Pokemon } from '../models/pokemon.interface';
 import { PokemonService } from '../services/pokemon.service';
 import { HomeService } from './home.service';
@@ -10,11 +11,10 @@ import { HomeService } from './home.service';
   styleUrls: ['home.page.scss'],
   providers: [HomeService]
 })
-export class HomePage implements OnInit {
+export class HomePage implements OnInit, OnChanges {
 
   pokemonList = new Array<any>();
   pokemon = {
-    id: null,
     name: '',
     description: '',
     image: '',
@@ -24,23 +24,35 @@ export class HomePage implements OnInit {
 
   constructor(private pokemonService: PokemonService, private router: Router) { }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getLista();
+  }
+
   ngOnInit(): void {
     this.getLista()
   }
 
   /**Popula a tabela */
   getLista() {
-    this.pokemonService.getAll().valueChanges().subscribe( res => {
-      this.pokemonList = res;
-      
+    this.pokemonService.getAll().snapshotChanges().subscribe( (res:any) => {
+      this.pokemonList = [];
+      res.forEach((element:any) => {
+        let a = element.payload.toJSON();
+        a["$key"] = element.key
+        this.pokemonList.push(a as Pokemon);
+      });
     });
   }
 
   /**Deleta o pokemon na base pelo id */
   deletarPokemon(id: string | number) {
+    console.log(id);
+    
     if(window.confirm("Certeza que deseja apagar esse pokemon?")){
-      this.pokemonService.deletePokemon(id)
+      this.pokemonService.deletePokemon(id);
+      location.reload();
     }
+    
   }
 
   /**Navegar para o form*/
@@ -50,6 +62,10 @@ export class HomePage implements OnInit {
     }else {
       this.router.navigate(["home/form"])
     }
+  }
+
+  navigateFormEye(id?: string | number){
+      this.router.navigate([`home/form-detail/${id}`])
   }
 
 }

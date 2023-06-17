@@ -12,17 +12,17 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class FormPage implements OnInit {
 
     form!: FormGroup;
+    editMode = false;
 
     constructor(private pokemonService: PokemonService, private router: Router, 
         private fb: FormBuilder, private activatedRouted: ActivatedRoute) { }
 
     ngOnInit(): void {
         this.form = this.fb.group({
-            id: [''],
             name: [''],
             description: [''],
             image: [''],
-            favorite: [false],
+            favorite: [null],
             types: ['']
         })
         
@@ -30,13 +30,17 @@ export class FormPage implements OnInit {
             this.pokemonService.getPokemonById(this.getId()).valueChanges().subscribe((res:any) =>{
                 console.log(res);
                 
-                this.form.setValue(res)
+                this.form.patchValue(res);
+                
+                if(this.router.url.split("/")[2] == "form-detail"){
+                    this.form.disable();
+                    this.editMode = true;
+                }
             })
         }
     }
     /**Cria o pokemon na base mock teste, ou atualiza caso o id tenha sido passado nos inputs */
     atualizarBase() {
-        this.form.get("favorite")?.setValue(this.conversorBoolean(this.form.get("favorite")?.value))
         /**Verificando se os campos estão preenchidos */
         if (this.form.get("description")?.value && this.form.get("name")?.value
          && this.form.get("image")?.value
@@ -44,12 +48,14 @@ export class FormPage implements OnInit {
             /**Verificando id */
             if (this.getId()) {
                 this.pokemonService.updatePokemon(this.form.getRawValue(), this.getId())
-                    this.router.navigateByUrl("/")
+                    this.returnHome();
                 
             } else {
                 this.pokemonService.postPokemon(this.form.getRawValue())
-                    this.router.navigateByUrl("/")
+                    this.returnHome();
             }
+        } else {
+            window.alert("Campos descrição, imagem e tipo são obrigatórios.")
         }
     }
 
@@ -60,6 +66,10 @@ export class FormPage implements OnInit {
 
     getId(): string | null{
         return this.router.url.split("/")[3];
+    }
+
+    returnHome(){
+        this.router.navigateByUrl("/");
     }
 
 }

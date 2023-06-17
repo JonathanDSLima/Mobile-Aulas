@@ -14,17 +14,24 @@
                 <ion-input  formControlName= "image" type="text" placeholder="Imagem"></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label position="floating"> Favorito (true | false)</ion-label>
+                <ion-label position="floating"> Favorito (Sim | Não)</ion-label>
                 <ion-input  formControlName= "favorite" type="text" placeholder="Favorito"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label position="floating"> Tipo</ion-label>
                 <ion-input  formControlName= "types" type="text" placeholder="Tipo"></ion-input>
             </ion-item>
-            <ion-row>
+            <ion-row *ngIf="!editMode">
                 <ion-col>
                     <ion-button shape="full" color="primary" type="submit" expand="block">
                         Salvar
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="editMode">
+                <ion-col>
+                    <ion-button shape="full" color="primary"  (click)="returnHome()" expand="block">
+                        Retornar
                     </ion-button>
                 </ion-col>
             </ion-row>

@@ -1,21 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      WIP:Pokedex
+      Pokedex
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">WIP:Pokedex</ion-title>
+      <ion-title size="large">Pokedex</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <strong style="color:#000000; display: flex; justify-content: center;">Listagem Pokemon</strong>
+
   <ion-content>
-    <ion-list>
+    <ion-list *ngIf="pokemonList.length">
       <ion-item>
         <ion-label>Avatar</ion-label>
         <ion-label>Nome</ion-label>
@@ -28,17 +29,20 @@
         <img src="{{data.image}}" alt="Avatar">
         <ion-label>{{ data.name}}</ion-label>
         <ion-label>{{ data.types}}</ion-label>
-        <ion-button (click)="deletarPokemon(data.id)">
+        <ion-button (click)="deletarPokemon(data.$key)">
           <ion-icon slot="icon-only" name="trash"></ion-icon>
         </ion-button>
-        <ion-button (click)="navigateForm(data.id)">
+        <ion-button (click)="navigateForm(data.$key)">
           <ion-icon slot="icon-only" name="pencil"></ion-icon>
+        </ion-button>
+        <ion-button (click)="navigateFormEye(data.$key)">
+          <ion-icon slot="icon-only" name="eye"></ion-icon>
         </ion-button>
       </ion-item>
     </ion-list>
 
     <ion-list style="display: flex; justify-content: center; margin-bottom: 2vw;">
-      <ion-button size="small" (click)="navigateForm()">
+      <ion-button size="small" (click)="navigateForm()" >
         Adicionar
       </ion-button>
     </ion-list>

@@ -19,7 +19,6 @@ export class PokemonService {
 
   postPokemon(pokemon: Pokemon) {
     return this.dataBase.list(URL).push({
-      id: new Date().getTime().toString(),
       name: pokemon.name,
       description: pokemon.description,
       image: pokemon.image,
@@ -31,7 +30,6 @@ export class PokemonService {
   updatePokemon(pokemon: Pokemon, id: string | null) {
     let aux = this.getPokemonById(id)
     return aux.update({
-      id: new Date().getTime().toString(),
       name: pokemon.name,
       description: pokemon.description,
       image: pokemon.image,

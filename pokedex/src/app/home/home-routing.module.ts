@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'form/:id',
     component: FormPage,
   },
+  {
+    path: 'form-detail/:id',
+    component: FormPage,
+  },
   
 ];
 
